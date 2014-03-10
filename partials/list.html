@@ -1,0 +1,13 @@
+<h1>Pokemons listing</h1>
+<div ng-controller="pokemonList">
+	Search: <input ng-model="query">
+	<div ng-class="{hidden : !loading}">Chargement...</div>
+	<ul class="pokemons">
+	  <li ng-repeat="pokemon in pokemons | filter:query">
+	    <p>
+	    	<a href="#/detail/{{pokemon.name}}">{{pokemon.name}}</a>
+	    </p>
+	    <hr>
+	  </li>
+	</ul>
+</div>
