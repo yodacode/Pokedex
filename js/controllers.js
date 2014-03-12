@@ -12,8 +12,8 @@ pokemonControllers.controller('pokemonHome', ['$scope', '$http',
       return id;
     }
     
-    $scope.select= function(i) {
-      $scope.selectedIndex=i;
+    $scope.select= function (i) {
+      $scope.selectedIndex = i;
     };
 
     $scope.getPokemon = function (id) {      
