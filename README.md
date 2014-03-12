@@ -2,9 +2,7 @@
 
 ## Description
 Simple pokedex using AngularJS
-* Display the Pokemon list
-* Search and filter Pokemons
-* Display the Detail
+Search and filter the list of Pokemon
 
 ## ScreenShot
 
