@@ -1,8 +1,7 @@
 # Pokedex AngularJS
 
 ## Description
-Simple pokedex using AngularJS
-Search and filter the list of Pokemon
+Simple pokedex using AngularJS. Search and filter the list of Pokemon
 
 ## ScreenShot
 
