@@ -1,5 +1,11 @@
 # Pokedex AngularJS
- 
+
+## Description
+Simple pokedex using AngularJS
+* Display the Pokemon list
+* Search and filter Pokemons
+* Display the Detail
+
 ## ScreenShot
 
 ![Pokedex](img/screenshot.png)
@@ -9,7 +15,6 @@
 * [Angular] - HTML enhanced for web apps
 * [Pokeapi] - The Pokémon RESTful API
 
-**Free Software, Hell Yeah!**
 [Angular]:http://angularjs.org/
 [Pokeapi]:http://pokeapi.co/
 
