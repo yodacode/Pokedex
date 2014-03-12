@@ -1,0 +1,67 @@
+<div ng-controller="pokemonHome">
+	<div class="pokedex">		
+		<div class="pokemon-list">
+			<input ng-model="query" class="filter" placeholder="Search...">
+			<ul class="list">
+			  	<li ng-repeat="pokemon in pokemons | filter:query" ng-click="getPokemon(getId(pokemon.resource_uri)); select($index)" 
+			  	ng-class="{active: $index===selectedIndex}" class="thumb">			    
+	  				<p>{{pokemon.name}}</p>
+			  	</li>
+			</ul>
+		</div>
+
+		<div class="pokemon-detail">
+			<div class="content" ng-show="displayDetail">
+				<h2>{{pokemon.name}}</h2>
+				<table class="table">
+		        	<thead>
+			          <tr>
+			            <th>Defense</th>
+			            <th>Attack</th>
+			            <th>HP</th>
+			            <th>Exp</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>{{pokemon.defense}}</td>
+			            <td>{{pokemon.attack}}</td>            
+			            <td>{{pokemon.hp}}</td>            
+			            <td>{{pokemon.exp}}</td>            
+			          </tr>			          
+	        		</tbody>
+		      	</table>
+		      	<table class="table">
+		        	<thead>
+			          <tr>
+			            <th>Height</th>
+			            <th>Weight</th>
+			            <th>Hapiness</th>
+			            <th>Speed</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>{{pokemon.height}}</td>
+			            <td>{{pokemon.weight}}</td>            
+			            <td>{{pokemon.happiness}}</td>            
+			            <td>{{pokemon.speed}}</td>            
+			          </tr>			          
+	        		</tbody>
+		      	</table>
+		      	<table class="table">
+		        	<thead>
+			          <tr>
+			            <th>ABILITIES</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr ng-repeat="ability in abilities">
+			            <td>{{ability.name}}</td>            
+			          </tr>			          
+	        		</tbody>
+		      	</table>
+			</div>
+		</div>
+	</div>
+</div>

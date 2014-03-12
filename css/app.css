@@ -1,3 +1,101 @@
 .hidden {
 	display: none;
 }
+
+/*----POKEDEX------*/
+
+.pokedex {
+	width: 800px;
+	height: 600px;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url('../img/pokedex.png');
+}
+
+.pokedex input {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.pokedex input.filter {
+	width: 290px;
+	margin: 7px;
+}
+
+.pokedex .table {
+	width: 100%;	
+	margin-top: 15px;
+}
+
+.pokedex .table thead {
+	background: #FFF;
+	color: #000;
+}
+
+.pokedex .table thead tr th,
+.pokedex .table tbody tr td{
+	text-align: center;
+	height: 30px;
+	vertical-align: middle;
+	padding: 5px;
+}
+
+.pokedex .table tr{
+	border-bottom: solid 1px #FFF; 
+}
+/*----LISTING------*/
+.pokemon-list {		
+	width: 330px;
+	float: left;
+	margin: 154px 0px 0px 30px;	
+}
+
+.pokemon-list ul.list {
+	overflow: scroll;
+	height: 273px;
+}
+
+.pokemon-list ul.list li {
+	cursor: pointer;
+	display: block;	
+	text-indent: 12px;
+	font-size: 1.1em;
+	border-bottom: solid 1px #ebebeb;
+	padding: 10px 0px 10px 0px;
+}
+
+.pokemon-list ul.list li.active {
+	background: #FF0085;
+	color: #FFF;
+}
+/*----DETAIL------*/
+.pokemon-detail {	
+	width: 299px;
+	float: left;
+	background: #000;
+	height: 373px;
+	margin: 159px 0px 0px 105px;
+	border-radius: 2px;
+	color: #49FF02;
+	overflow: scroll;
+}
+.pokemon-detail h2 {	
+	font-size: 1.6em;
+	margin: 15px 0px 15px 0px;
+	text-align: center;
+	border-bottom: dashed 2px;
+	padding-bottom: 10px;
+}
