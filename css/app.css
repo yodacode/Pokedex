@@ -99,7 +99,8 @@
 .pokemon-detail .loader {
 	position: absolute;
 	background: #000;
-	opacity: 0.8;	
+	opacity: 0.8;
+	border: solid; 
 	padding: 7px;
 	top: 165px;
 	left: 112px;

@@ -1,11 +1,20 @@
 <div ng-controller="pokemonHome">
-	<div class="pokedex">		
+	<p>{{selectedIndex}}</p>
+	<div class="pokedex">
 		<div class="pokemon-list">
-			<input ng-model="query" class="filter" placeholder="Search...">
+			<form ng-submit="submit()">
+				<input placeholder="Search..." class="filter"
+					ng-model="query"
+					ng-arrowup="selectUp(selectedIndex)"
+					ng-arrowdown=" selectDown(selectedIndex)"
+					ng-change="select(0)"/>
+			</form>
 			<ul class="list">
-			  	<li ng-repeat="pokemon in pokemons | filter:query" ng-click="getPokemon(getId(pokemon.resource_uri)); select($index)" 
-			  	ng-class="{active: $index===selectedIndex}" class="thumb">			    
-	  				<p>{{pokemon.name}}</p>
+			  	<li class="thumb"
+			  		ng-repeat="pokemon in pokemons | filter:query"
+			  		ng-click="getPokemon(getId(pokemon.resource_uri)); select($index)"
+			  		ng-class="{active: $index===selectedIndex}">
+	  					<p>{{pokemon.name}}</p>
 			  	</li>
 			</ul>
 		</div>
@@ -26,10 +35,10 @@
 			        <tbody>
 			          <tr>
 			            <td>{{pokemon.defense}}</td>
-			            <td>{{pokemon.attack}}</td>            
-			            <td>{{pokemon.hp}}</td>            
-			            <td>{{pokemon.exp}}</td>            
-			          </tr>			          
+			            <td>{{pokemon.attack}}</td>
+			            <td>{{pokemon.hp}}</td>
+			            <td>{{pokemon.exp}}</td>
+			          </tr>
 	        		</tbody>
 		      	</table>
 		      	<table class="table">
@@ -44,10 +53,10 @@
 			        <tbody>
 			          <tr>
 			            <td>{{pokemon.height}}</td>
-			            <td>{{pokemon.weight}}</td>            
-			            <td>{{pokemon.happiness}}</td>            
-			            <td>{{pokemon.speed}}</td>            
-			          </tr>			          
+			            <td>{{pokemon.weight}}</td>
+			            <td>{{pokemon.happiness}}</td>
+			            <td>{{pokemon.speed}}</td>
+			          </tr>
 	        		</tbody>
 		      	</table>
 		      	<table class="table">
@@ -58,8 +67,8 @@
 			        </thead>
 			        <tbody>
 			          <tr ng-repeat="ability in abilities">
-			            <td>{{ability.name}}</td>            
-			          </tr>			          
+			            <td>{{ability.name}}</td>
+			          </tr>
 	        		</tbody>
 		      	</table>
 			</div>
