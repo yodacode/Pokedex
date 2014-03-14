@@ -56,6 +56,7 @@
 .pokedex .table tr{
 	border-bottom: solid 1px #FFF; 
 }
+
 /*----LISTING------*/
 .pokemon-list {		
 	width: 330px;
@@ -81,9 +82,11 @@
 	background: #FF0085;
 	color: #FFF;
 }
+
 /*----DETAIL------*/
 .pokemon-detail {	
 	width: 299px;
+	position: relative;
 	float: left;
 	background: #000;
 	height: 373px;
@@ -92,6 +95,17 @@
 	color: #49FF02;
 	overflow: scroll;
 }
+
+.pokemon-detail .loader {
+	position: absolute;
+	background: #000;
+	opacity: 0.8;	
+	padding: 7px;
+	top: 165px;
+	left: 112px;
+	text-transform: uppercase;	
+}
+
 .pokemon-detail h2 {	
 	font-size: 1.6em;
 	margin: 15px 0px 15px 0px;

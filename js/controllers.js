@@ -5,7 +5,8 @@ var pokemonControllers = angular.module('pokemonControllers', []);
 pokemonControllers.controller('pokemonHome', ['$scope', '$http',
 	function ($scope, $http) { 
 
-    $scope.displayDetail = false;
+    //init template
+        
 
     $scope.getId = function (uri) {
       id = uri.split('/')[3];
@@ -16,11 +17,16 @@ pokemonControllers.controller('pokemonHome', ['$scope', '$http',
       $scope.selectedIndex = i;
     };
 
-    $scope.getPokemon = function (id) {      
+    $scope.getPokemon = function (id) {
+      
+      $scope.loader = true;
+      $scope.displayDetail = false;
+
       $http.get('api/pokemon.php', {
           params: { id: id }
       }).success(function (data) {        
-          $scope.pokemon = data;          
+          $scope.pokemon = data; 
+          $scope.loader = false;
           $scope.abilities = data.abilities;
           $scope.displayDetail = true;
       });

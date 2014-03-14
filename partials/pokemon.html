@@ -11,6 +11,7 @@
 		</div>
 
 		<div class="pokemon-detail">
+			<div ng-show="loader" class="loader">Loading...</div>
 			<div class="content" ng-show="displayDetail">
 				<h2>{{pokemon.name}}</h2>
 				<table class="table">
