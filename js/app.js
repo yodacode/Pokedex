@@ -7,9 +7,7 @@ var pokedexApp = angular.module('pokedexApp', [
 pokedexApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider
-			.when('/', {templateUrl: 'partials/list.html'})
-			.when('/detail/:id', {templateUrl: 'partials/detail.html'})
-			.when('/pokemon', {templateUrl: 'partials/pokemon.html'})
+			.when('/', {templateUrl: 'partials/pokemon.html'})
 			.otherwise({redirectTo: '/'})
 
 }]);
