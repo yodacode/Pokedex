@@ -19,6 +19,7 @@
 			<div ng-show="loader" class="loader">Loading...</div>
 			<div class="content" ng-show="displayDetail">
 				<h2>{{pokemon.name}}</h2>
+				<img src="http://pokeapi.co/media/img/{{pokemon.national_id || '1'}}.png"/>
 				<table class="table">
 		        	<thead>
 			          <tr>

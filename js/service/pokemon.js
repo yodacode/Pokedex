@@ -23,14 +23,6 @@ pokedexApp.factory('Pokemon', function ($http, $q) {
         get: function (uri) {
             var deferred = $q.defer();
 
-            $http.get('api/pokedex.php')
-                .success(function (data, status) {
-                    factory.pokemons = data.pokemon;
-                    deferred.resolve(factory.pokemons);
-                }).error(function (data, status) {
-                    deferred.reject('Impossible to retrive pokemons.');
-                });
-
             $http.get('api/pokemon.php', {
                 params: { uri: uri }
             }).success(function (data, status) {
