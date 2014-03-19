@@ -3,7 +3,6 @@
 }
 
 /*----POKEDEX------*/
-
 .pokedex {
 	width: 800px;
 	height: 600px;
@@ -37,7 +36,7 @@
 
 .pokedex .table {
 	width: 100%;
-	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .pokedex .table thead {
@@ -45,12 +44,24 @@
 	color: #000;
 }
 
+.pokedex .table tbody tr.clickable {
+	background: url('../img/arrow.png') no-repeat;
+	background-position: right 10px;
+	cursor: pointer;
+}
+
 .pokedex .table thead tr th,
-.pokedex .table tbody tr td{
+.pokedex .table tbody tr td {
 	text-align: center;
 	height: 30px;
 	vertical-align: middle;
 	padding: 5px;
+}
+
+.pokedex .table.small thead tr th,
+.pokedex .table.small tbody tr td {
+	font-size: 0.8em;
+	padding: 3px;
 }
 
 .pokedex .table tr{
@@ -76,10 +87,14 @@
 	font-size: 1.1em;
 	border-bottom: solid 1px #ebebeb;
 	padding: 10px 0px 10px 0px;
+	background-image: url('../img/arrow2.png');
+	background-repeat: no-repeat;
+	background-position: right 11px;
 }
 
 .pokemon-list ul.list li.active {
-	background: #FF0085;
+	background-color: #FF0085;
+	background-image: url('../img/arrow.png');
 	color: #FFF;
 }
 
@@ -96,6 +111,10 @@
 	overflow: scroll;
 }
 
+.pokemon-detail .white{
+	color: #FFF;
+}
+
 .pokemon-detail .loader {
 	position: absolute;
 	background: #000;
@@ -108,13 +127,31 @@
 }
 
 .pokemon-detail h2 {
-	font-size: 1.6em;
-	margin: 15px 0px 15px 0px;
-	text-align: center;
-	border-bottom: dashed 2px;
-	padding-bottom: 10px;
+	font-size: 1em;
+	margin: 7px 0px 0px 0px;
+	border-bottom: dashed 1px #49FF02;
+	padding-bottom: 7px;
+	text-indent: 7px;
+	color: #FFF;
 }
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+/*----Introduction------*/
+.pokemon-detail .introduction .section {
+	display: inline-block;
+	width: 50%;
+	float: left;
+}
+
+.pokemon-detail .introduction table.types {
+	margin: 5px 5px 0px 0px;
+	font-size: 0.8em;
+	float: right;
+}
+
+.pokemon-detail .introduction .types td {
+	padding: 3px;
 }

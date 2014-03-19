@@ -20,9 +20,9 @@ pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon) {
         $scope.displayDetail = false;
 
         Pokemon.get(id).then(function (pokemon) {
+            console.log(pokemon);
             $scope.pokemon = pokemon;
             $scope.loader = false;
-            $scope.abilities = pokemon.abilities;
             $scope.displayDetail = true;
         }, function (msg) {
             alert(msg);

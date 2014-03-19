@@ -1,5 +1,4 @@
 <div ng-controller="pokemonHome">
-	<p>{{selectedIndex}}</p>
 	<div class="pokedex">
 		<div class="pokemon-list">
 			<form ng-submit="submit()">
@@ -19,55 +18,80 @@
 			<div ng-show="loader" class="loader">Loading...</div>
 			<div class="content" ng-show="displayDetail">
 				<h2>{{pokemon.name}}</h2>
-				<img src="http://pokeapi.co/media/img/{{pokemon.national_id || '1'}}.png"/>
+				<div class="introduction">
+			      	<div class="section left">
+						<img src="http://pokeapi.co/media/img/{{pokemon.national_id || '1'}}.png"/>
+					</div>
+					<div class="section right">
+	      		      	<table class="types">
+	      			        <tbody>
+	      			          <tr>
+	      			            <td>
+	      			            	<span class="white">Types :</span>
+	      			            	<span ng-repeat="type in pokemon.types">{{type.name}} </span>
+	      			            </td>
+	      			          </tr>
+
+	      			          <tr>
+	      			            <td>
+	      			            	<span class="white">Weight :</span>
+	      			            	<span>{{pokemon.weight}} </span>
+	      			            </td>
+	      			          </tr>
+
+	      			          <tr>
+	      			            <td>
+	      			            	<span class="white">Height :</span>
+	      			            	<span>{{pokemon.height}} </span>
+	      			            </td>
+	      			          </tr>
+	      	        		</tbody>
+	      		      	</table>
+			      	</div>
+				</div>
 				<table class="table">
 		        	<thead>
 			          <tr>
-			            <th>Defense</th>
-			            <th>Attack</th>
+			            <th>ID</th>
+			            <th>DEF</th>
+			            <th>ATTK</th>
 			            <th>HP</th>
-			            <th>Exp</th>
 			          </tr>
 			        </thead>
 			        <tbody>
 			          <tr>
+			            <td>{{pokemon.national_id}}</td>
 			            <td>{{pokemon.defense}}</td>
 			            <td>{{pokemon.attack}}</td>
 			            <td>{{pokemon.hp}}</td>
-			            <td>{{pokemon.exp}}</td>
 			          </tr>
 	        		</tbody>
 		      	</table>
-		      	<table class="table">
+		      	<table class="table small">
 		        	<thead>
 			          <tr>
-			            <th>Height</th>
-			            <th>Weight</th>
-			            <th>Hapiness</th>
-			            <th>Speed</th>
+			            <th>Abilities</th>
 			          </tr>
 			        </thead>
 			        <tbody>
-			          <tr>
-			            <td>{{pokemon.height}}</td>
-			            <td>{{pokemon.weight}}</td>
-			            <td>{{pokemon.happiness}}</td>
-			            <td>{{pokemon.speed}}</td>
-			          </tr>
-	        		</tbody>
-		      	</table>
-		      	<table class="table">
-		        	<thead>
-			          <tr>
-			            <th>ABILITIES</th>
-			          </tr>
-			        </thead>
-			        <tbody>
-			          <tr ng-repeat="ability in abilities">
+			          <tr ng-repeat="ability in pokemon.abilities" class="clickable">
 			            <td>{{ability.name}}</td>
 			          </tr>
 	        		</tbody>
 		      	</table>
+
+  		      	<table class="table small" ng-show="pokemon.evolutions.length > 0">
+  		        	<thead>
+  			          <tr>
+  			            <th>Evolutions</th>
+  			          </tr>
+  			        </thead>
+  			        <tbody>
+  			          <tr ng-repeat="evolution in pokemon.evolutions" class="clickable">
+  			            <td><span class="white">Become</span> {{evolution.to}} <span class="white">at Lvl</span> {{evolution.level}}</td>
+  			          </tr>
+  	        		</tbody>
+  		      	</table>
 			</div>
 		</div>
 	</div>
