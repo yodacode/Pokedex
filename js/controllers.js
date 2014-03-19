@@ -1,6 +1,4 @@
-var pokemonControllers = angular.module('pokemonControllers', []);
-
-pokemonControllers.controller('pokemonHome', ['$scope', '$http',
+pokedexApp.controller('pokemonHome', ['$scope', '$http',
 	function ($scope, $http) {
 
     $scope.getId = function (uri) {
@@ -59,7 +57,7 @@ pokemonControllers.controller('pokemonHome', ['$scope', '$http',
 	}
 ]);
 
-pokemonControllers.directive('ngArrowup', function () {
+pokedexApp.directive('ngArrowup', function () {
     return function (scope, element, attrs) {
       element.bind("keydown keypress", function (event) {
         if(event.which === 38) {
@@ -72,7 +70,7 @@ pokemonControllers.directive('ngArrowup', function () {
     };
 });
 
-pokemonControllers.directive('ngArrowdown', function () {
+pokedexApp.directive('ngArrowdown', function () {
     return function (scope, element, attrs) {
         element.bind("keydown keypress", function (event) {
           if(event.which === 40) {

@@ -1,7 +1,5 @@
 var pokedexApp = angular.module('pokedexApp', [
-	'ngRoute',
-	'ngTouch',
-	'pokemonControllers'
+	'ngRoute'
 ]);
 
 pokedexApp.config(['$routeProvider',
@@ -9,6 +7,5 @@ pokedexApp.config(['$routeProvider',
 		$routeProvider
 			.when('/', {templateUrl: 'partials/pokemon.html'})
 			.otherwise({redirectTo: '/'})
-
 }]);
 
