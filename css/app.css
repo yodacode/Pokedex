@@ -36,7 +36,7 @@
 }
 
 .pokedex .table {
-	width: 100%;	
+	width: 100%;
 	margin-top: 15px;
 }
 
@@ -54,14 +54,14 @@
 }
 
 .pokedex .table tr{
-	border-bottom: solid 1px #FFF; 
+	border-bottom: solid 1px #FFF;
 }
 
 /*----LISTING------*/
-.pokemon-list {		
+.pokemon-list {
 	width: 330px;
 	float: left;
-	margin: 154px 0px 0px 30px;	
+	margin: 154px 0px 0px 30px;
 }
 
 .pokemon-list ul.list {
@@ -71,7 +71,7 @@
 
 .pokemon-list ul.list li {
 	cursor: pointer;
-	display: block;	
+	display: block;
 	text-indent: 12px;
 	font-size: 1.1em;
 	border-bottom: solid 1px #ebebeb;
@@ -84,7 +84,7 @@
 }
 
 /*----DETAIL------*/
-.pokemon-detail {	
+.pokemon-detail {
 	width: 299px;
 	position: relative;
 	float: left;
@@ -100,14 +100,14 @@
 	position: absolute;
 	background: #000;
 	opacity: 0.8;
-	border: solid; 
+	border: solid;
 	padding: 7px;
 	top: 165px;
 	left: 112px;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 }
 
-.pokemon-detail h2 {	
+.pokemon-detail h2 {
 	font-size: 1.6em;
 	margin: 15px 0px 15px 0px;
 	text-align: center;
@@ -115,6 +115,6 @@
 	padding-bottom: 10px;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }

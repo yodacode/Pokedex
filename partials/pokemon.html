@@ -12,7 +12,7 @@
 			<ul class="list">
 			  	<li class="thumb"
 			  		ng-repeat="pokemon in pokemons | filter:query"
-			  		ng-click="getPokemon(getId(pokemon.resource_uri)); select($index)"
+			  		ng-click="getPokemon(pokemon.resource_uri); select($index)"
 			  		ng-class="{active: $index===selectedIndex}">
 	  					<p>{{pokemon.name}}</p>
 			  	</li>
