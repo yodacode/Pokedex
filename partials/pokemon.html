@@ -3,11 +3,7 @@
 	<div class="pokedex">
 		<div class="pokemon-list">
 			<form ng-submit="submit()">
-				<input placeholder="Search..." class="filter"
-					ng-model="query"
-					ng-arrowup="selectUp(selectedIndex)"
-					ng-arrowdown=" selectDown(selectedIndex)"
-					ng-change="select(0)"/>
+				<input placeholder="Search..." class="filter" ng-model="query"/>
 			</form>
 			<ul class="list">
 			  	<li class="thumb"
