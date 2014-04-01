@@ -1,5 +1,12 @@
 pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon, Move) {
 
+    $scope.getLayout = function (layout) {
+        $scope.displayDetailPokemon = false;
+        $scope.displayListMoves = false;
+        $scope.displayDetailMove = false;
+        $scope[layout] = true;
+    };
+
     $scope.select= function (index) {
         $scope.selectedIndex = index;
     };
@@ -8,9 +15,6 @@ pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon, Move) {
 
         //init the view
         $scope.loader = true;
-        $scope.displayDetailPokemon = false;
-        $scope.displayListMoves = false;
-        $scope.displayDetailMove = false;
 
         Pokemon.get(uri).then(function (pokemon) {
             console.log(pokemon);
@@ -19,7 +23,7 @@ pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon, Move) {
             //remove loarder
             $scope.loader = false;
             // display the detail view
-            $scope.displayDetailPokemon = true;
+            $scope.getLayout('displayDetailPokemon');
         }, function (msg) {
             alert(msg);
         });
@@ -28,8 +32,7 @@ pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon, Move) {
     $scope.getMoves = function (uri) {
         
         //init the view
-        $scope.displayDetailPokemon = false;
-        $scope.displayListMoves = true;
+        getLayout('displayListMoves')
 
     }
 
@@ -37,18 +40,16 @@ pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon, Move) {
         
         //init the view
         $scope.loader = true;
-        $scope.displayDetailPokemon = false;
-        $scope.displayListMoves = false;
-        $scope.displayDetailMove = false;
 
         Move.get(uri).then(function (move) {
             console.log(move);
             //return;
             //store move in the $scope
-            $scope.displayDetailMove = true;
             $scope.move = move;
             //remove loader
             $scope.loader = false;
+            //$scope.displayDetailMove = true;
+            $scope.getLayout('displayDetailMove');
         }, function (msg) {
             alert(msg);
         });
