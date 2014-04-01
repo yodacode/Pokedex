@@ -98,7 +98,7 @@
   			          </tr>
   			        </thead>
   			        <tbody>
-  			          <tr ng-repeat="evolution in pokemon.evolutions" class="clickable">
+  			          <tr ng-repeat="evolution in pokemon.evolutions" class="clickable" ng-click="getPokemon(evolution.resource_uri)">
   			            <td><span class="white">Become</span> {{evolution.to}} <span class="white">at Lvl</span> {{evolution.level}}</td>
   			          </tr>
   	        		</tbody>
