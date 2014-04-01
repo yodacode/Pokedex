@@ -2,6 +2,7 @@ pokedexApp.factory('Pokemon', function ($http, $q) {
     var factory = {
         pokemons: false,
 
+        //get all pokemons
         getAll: function () {
             var deferred = $q.defer();
             
@@ -13,13 +14,14 @@ pokedexApp.factory('Pokemon', function ($http, $q) {
                     .success(function (data, status) {
                         factory.pokemons = data.pokemon;
                         deferred.resolve(factory.pokemons);
-                    }).error(function (data, status) {
-                        deferred.reject('Impossible to retrive pokemons.');
+                    }).error(function () {
+                        deferred.reject('Impossible to retrieve pokemons.');
                     });
                 return deferred.promise;
             }
         },
 
+        //get one pokemon
         get: function (uri) {
             var deferred = $q.defer();
 
@@ -28,8 +30,8 @@ pokedexApp.factory('Pokemon', function ($http, $q) {
             }).success(function (data, status) {
                 factory.pokemon = data;
                 deferred.resolve(factory.pokemon);
-            }).error(function (data, status) {
-                deferred.reject('Impossible to retrive pokemons.');
+            }).error(function () {
+                deferred.reject('Impossible to retrieve the pokemon.');
             });
 
             return deferred.promise;

@@ -58,6 +58,10 @@
 	padding: 5px;
 }
 
+.pokedex .table.left tbody tr td {
+	text-align: left;
+}
+
 .pokedex .table.small thead tr th,
 .pokedex .table.small tbody tr td {
 	font-size: 0.8em;
@@ -144,6 +148,11 @@
 	display: inline-block;
 	width: 50%;
 	float: left;
+}
+
+.pokemon-detail .introduction p {
+	margin: 10px;
+	line-height: 20px;
 }
 
 .pokemon-detail .introduction table.types {

@@ -1,39 +1,65 @@
-pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon) {
-
-    $scope.submit = function () {
-        var focusedId;
-        if ($scope.pokemons[$scope.selectedIndex]) {
-            focusedId = $scope.pokemons[$scope.selectedIndex].resource_uri.split('/')[3];
-            $scope.getPokemon(focusedId);
-        } else {
-            return false;
-        }
-    }
+pokedexApp.controller('pokemonHome', function ($scope, $http, Pokemon, Move) {
 
     $scope.select= function (index) {
         $scope.selectedIndex = index;
     };
 
-    $scope.getPokemon = function (id) {
+    $scope.getPokemon = function (uri) {        
 
+        //init the view
         $scope.loader = true;
-        $scope.displayDetail = false;
+        $scope.displayDetailPokemon = false;
+        $scope.displayListMoves = false;
+        $scope.displayDetailMove = false;
 
-        Pokemon.get(id).then(function (pokemon) {
+        Pokemon.get(uri).then(function (pokemon) {
             console.log(pokemon);
+            //store pokemon in the $scope
             $scope.pokemon = pokemon;
+            //remove loarder
             $scope.loader = false;
-            $scope.displayDetail = true;
+            // display the detail view
+            $scope.displayDetailPokemon = true;
         }, function (msg) {
             alert(msg);
         });
     }
 
+    $scope.getMoves = function (uri) {
+        
+        //init the view
+        $scope.displayDetailPokemon = false;
+        $scope.displayListMoves = true;
+
+    }
+
+    $scope.getMove = function (uri) {
+        
+        //init the view
+        $scope.loader = true;
+        $scope.displayDetailPokemon = false;
+        $scope.displayListMoves = false;
+        $scope.displayDetailMove = false;
+
+        Move.get(uri).then(function (move) {
+            console.log(move);
+            //return;
+            //store move in the $scope
+            $scope.displayDetailMove = true;
+            $scope.move = move;
+            //remove loader
+            $scope.loader = false;
+        }, function (msg) {
+            alert(msg);
+        });
+    }
+
+
+    //init
     Pokemon.getAll().then(function (pokemons) {
         $scope.pokemons = pokemons;
     }, function (msg) {
         alert(msg);
     });
 
-	}
-);
+});

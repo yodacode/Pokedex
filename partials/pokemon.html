@@ -1,7 +1,7 @@
 <div ng-controller="pokemonHome">
 	<div class="pokedex">
 		<div class="pokemon-list">
-			<form ng-submit="submit()">
+			<form>
 				<input placeholder="Search..." class="filter" ng-model="query"/>
 			</form>
 			<ul class="list">
@@ -16,7 +16,7 @@
 
 		<div class="pokemon-detail">
 			<div ng-show="loader" class="loader">Loading...</div>
-			<div class="content" ng-show="displayDetail">
+			<div class="content" ng-show="displayDetailPokemon">
 				<h2>{{pokemon.name}}</h2>
 				<div class="introduction">
 			      	<div class="section left">
@@ -67,6 +67,18 @@
 			          </tr>
 	        		</tbody>
 		      	</table>
+  		      	<table class="table small">
+  		        	<thead>
+  			          <tr>
+  			            <th>Moves</th>
+  			          </tr>
+  			        </thead>
+  			        <tbody>
+  			          <tr class="clickable" ng-click="getMoves()">
+  			            <td>See all moves</td>
+  			          </tr>
+  	        		</tbody>
+  		      	</table>
 		      	<table class="table small">
 		        	<thead>
 			          <tr>
@@ -74,12 +86,11 @@
 			          </tr>
 			        </thead>
 			        <tbody>
-			          <tr ng-repeat="ability in pokemon.abilities" class="clickable">
+			          <tr ng-repeat="ability in pokemon.abilities">
 			            <td>{{ability.name}}</td>
 			          </tr>
 	        		</tbody>
 		      	</table>
-
   		      	<table class="table small" ng-show="pokemon.evolutions.length > 0">
   		        	<thead>
   			          <tr>
@@ -93,6 +104,42 @@
   	        		</tbody>
   		      	</table>
 			</div>
+			<div class="content" ng-show="displayListMoves">				
+		      	<table class="table small left">
+			        <tbody>
+			          <tr ng-repeat="move in pokemon.moves" class="clickable" ng-click="getMove(move.resource_uri)">
+			            <td>
+			            	<span class="white">Move: </span>{{move.name}}<br>
+			            	<span class="white">Learn type: </span>{{move.learn_type}}
+			            </td>
+			          </tr>
+	        		</tbody>
+		      	</table>
+	      	</div>
+	      	<div class="content" ng-show="displayDetailMove">
+	      		<h2>{{move.name}}</h2>
+	      		<div class="introduction">
+	      			<p>{{move.description}}</p>
+	      		</div>
+				<table class="table">
+		        	<thead>
+			          <tr>
+			            <th>ID</th>
+			            <th>Accuracy</th>
+			            <th>Power</th>
+			            <th>PP</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td>{{move.id}}</td>
+			            <td>{{move.accuracy}}</td>
+			            <td>{{move.power}}</td>
+			            <td>{{move.pp}}</td>
+			          </tr>
+	        		</tbody>
+		      	</table>
+	      	</div>
 		</div>
 	</div>
 </div>
